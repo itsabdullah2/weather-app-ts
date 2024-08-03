@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  width: 30px;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  background-image: url("../assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+.container h2 {
+  position: absolute;
+  top: 70px;
+  left: 100px;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+@media (max-width: 767px) {
+  .container h2 {
+    left: 30px;
+  }
+}
+.container .open_btn {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  width: 70px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .container .open_btn {
+    right: 30px;
+  }
+}
+.container .open_btn span {
+  width: 100%;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+.container .open_btn span:last-child {
+  width: 80%;
+  align-self: flex-end;
+}
+.container .weather_content .weather_info {
+  position: absolute;
+  bottom: 150px;
+  left: 100px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 767px) {
+  .container .weather_content .weather_info {
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.container .weather_content .weather_info .degree {
+  font-size: 7.5rem;
+  margin-bottom: -29px;
+}
+.container .weather_content .weather_info .info_holder {
+  display: flex;
+  gap: 8px;
+}
+.container .weather_content .weather_info .info_holder .date_info {
+  font-size: 14px;
+  color: rgb(221, 221, 221);
+}
+.container .weather_content .weather_info .info_holder .date_info .country_name {
+  font-size: 47.5px;
+}
+.container .weather_content .weather_info .info_holder .icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  font-size: 14px;
+  color: rgb(221, 221, 221);
+}
+.container .weather_content .weather_info .info_holder .icon > img {
+  width: 50px;
+}
+.container .weather_content .weather_details {
+  width: 600px;
+  height: 100%;
+  padding: 40px 60px 0;
+  position: absolute;
+  top: 0;
+  background-color: rgba(29, 32, 37, 0.7);
+  backdrop-filter: blur(1rem);
+  overflow-y: auto;
+  transition: 0.6s;
+}
+@media (max-width: 767px) {
+  .container .weather_content .weather_details {
+    width: 100%;
+    padding-inline: 40px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .weather_content .weather_details {
+    right: -100%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container .weather_content .weather_details {
+    right: -100%;
+  }
+}
+.container .weather_content .weather_details.hide {
+  right: -100%;
+}
+.container .weather_content .weather_details.show {
+  right: 0;
+}
+.container .weather_content .weather_details form {
+  margin-bottom: 20px;
+}
+.container .weather_content .weather_details form .search_country {
+  width: 350px;
+  padding: 20px 0 5px;
+  border: none;
+  background-color: transparent;
+  color: rgb(182, 188, 200);
+  border-bottom: 1px solid rgb(104, 112, 125);
+  font-size: 18px;
+  font-weight: 600;
+}
+.container .weather_content .weather_details form .search_country::placeholder {
+  color: rgb(182, 188, 200);
+  font-size: 16px;
+  font-weight: normal;
+}
+.container .weather_content .weather_details form .search_country:focus::placeholder {
+  opacity: 0;
+  transition: 0.3s;
+}
+@media (min-width: 320px) and (max-width: 481px) {
+  .container .weather_content .weather_details form .search_country {
+    width: 100%;
+  }
+}
+.container .weather_content .weather_details form .submit_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 87px;
+  height: 87px;
+  background-color: rgb(255, 125, 26);
+  border: none;
+  cursor: pointer;
+}
+.container .weather_content .weather_details .suggested_container {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(104, 112, 125);
+}
+.container .weather_content .weather_details .suggested_container .title {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+.container .weather_content .weather_details .suggested_container .suggested .city {
+  color: rgb(182, 188, 200);
+  font-size: 18px;
+  cursor: pointer;
+}
+.container .weather_content .weather_details .suggested_container .suggested .city:not(:last-child) {
+  padding-bottom: 15px;
+}
+.container .weather_content .weather_details .details_container {
+  padding-block: 20px;
+  border-bottom: 1px solid rgb(104, 112, 125);
+}
+.container .weather_content .weather_details .details_container .title {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+.container .weather_content .weather_details .details_container .details .info {
+  font-size: 18px;
+  color: rgb(182, 188, 200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .weather_content .weather_details .details_container .details .info:not(:last-child) {
+  padding-bottom: 15px;
+}
+.container .weather_content .weather_details .next_days_container {
+  padding-block: 20px;
+}
+.container .weather_content .weather_details .next_days_container .title {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+.container .weather_content .weather_details .next_days_container .next_days .day {
+  font-size: 18px;
+  color: rgb(182, 188, 200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .weather_content .weather_details .next_days_container .next_days .day:not(:last-child) {
+  padding-bottom: 15px;
+}
+.container .weather_content .weather_details .close_btn {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 50px;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: rgb(29, 32, 37);
+  background-color: rgb(255, 125, 26);
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

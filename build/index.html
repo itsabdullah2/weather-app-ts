@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>the.weather</h2>
+      <div class="open_btn"><span></span><span></span></div>
+      <div class="weather_content">
+        <div class="weather_info">
+          <h3 class="degree"><span class="temp">0</span>&deg;</h3>
+          <div class="info_holder">
+            <div class="date_info">
+              <p class="country_name">___</p>
+              <span class="day">__</span>,
+              <span class="date">__ __ __</span>
+            </div>
+
+            <div class="icon">
+              <img src="https://openweathermap.org/img/wn/01d.png" alt="icon" />
+              <span class="description">__</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather_details show">
+          <form class="form">
+            <input
+              type="text"
+              class="search_country"
+              placeholder="Another location"
+            />
+            <button class="submit_btn">
+              <img src="./assets/search.png" alt="search" />
+            </button>
+          </form>
+
+          <div class="suggested_container">
+            <h3 class="title">Suggested City</h3>
+            <ul class="suggested">
+              <li class="city">Giza</li>
+              <li class="city">Cairo</li>
+              <li class="city">Faiyum</li>
+              <li class="city">Istanbul</li>
+            </ul>
+          </div>
+
+          <div class="details_container">
+            <h3 class="title">Weather Details</h3>
+            <ul class="details">
+              <li class="info">
+                <span>Humidity</span><span class="humidity_percent">0%</span>
+              </li>
+              <li class="info">
+                <span>Wind</span><span class="wind_speed">0km/h</span>
+              </li>
+              <li class="info">
+                <span>Sunrise</span><span class="sunrise">00:00 AM</span>
+              </li>
+              <li class="info">
+                <span>Sunset</span><span class="sunset">00:00 PM</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="next_days_container">
+            <h3 class="title">Next 5 days</h3>
+            <ul class="next_days">
+              <li class="day">
+                <span class="day">__</span><span class="symbol">__</span>
+              </li>
+              <li class="day">
+                <span class="day">__</span><span class="symbol">__</span>
+              </li>
+              <li class="day">
+                <span class="day">__</span><span class="symbol">__</span>
+              </li>
+              <li class="day">
+                <span class="day">__</span><span class="symbol">__</span>
+              </li>
+            </ul>
+          </div>
+
+          <button class="close_btn">
+            <i class="fa-solid fa-caret-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
